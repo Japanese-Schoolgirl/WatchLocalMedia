@@ -195,11 +195,11 @@
 		</script>
 	</head>
 	<body style="background-color: #222222;">
-		<span onmouseover="setTimeout(()=>{this.remove();}, 100)" style='color: magenta; text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px white, 0px 0px 10px white, 0px 0px 10px white; white-space: pre-line; position: absolute; left: 5%; top: 50%; z-index: 99;'>Flash, Video и Audio добавляются перетаскиванием. Текстовое поле можно менять в размере и двигать за верхний край. &#10;Прокрутка страницы доступна, но не отображается (если не работает колёсико мыши, используйте стрелочки). &#10;Для скрытия этой надписи требуется навести курсор на этот текст.</span>
-		<div id='DraggableTextarea'><div id='DraggableTextarea_Header'></div><textarea id='DraggableTextarea_Text' placeholder='Это место здесь, если вам нужно что-то сюда написать'></textarea></div>
+		<span id="HintText" onmouseover="setTimeout(()=>{this.remove();}, 100)" style='color: magenta; text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px white, 0px 0px 10px white, 0px 0px 10px white; white-space: pre-line; position: absolute; left: 5%; top: 50%; z-index: 99;'>Flash, Video и Audio добавляются перетаскиванием. Текстовое поле можно менять в размере и двигать за верхний край. &#10;Прокрутка страницы доступна, но не отображается (если не работает колёсико мыши, используйте стрелочки). &#10;Для скрытия этой надписи требуется навести курсор на этот текст.</span>
+		<div id='DraggableTextarea'><div id='DraggableTextarea_Header'></div><textarea id='DraggableTextarea_Text' placeholder='Место для заметок'></textarea></div>
 		<div id='GUI' align='right'>
 			<button onclick="document.getElementById('content_div').innerHTML = null;">Очистить</button>
-			<button onclick="document.getElementById('DraggableTextarea').remove(); document.getElementById('GUI').remove(); document.styleSheets[0].addRule('.MediaName', 'display: none;'); document.styleSheets[0].addRule('body, video', 'height: 100%');">Удалить интерфейс</button>
+			<button onclick="document.getElementById('DraggableTextarea').remove(); document.getElementById('GUI').remove(); document.getElementById('HintText').remove(); document.styleSheets[0].addRule('.MediaName', 'display: none;'); document.styleSheets[0].addRule('body, video', 'height: 100%');">Удалить интерфейс</button>
 			<button onclick="customPrompt('open', 'Вставьте ссылку на страницу:', 'https://youtube.com', 'Перейти', 'Отмена')">Открыть страницу</button>
 			<button onclick="customPrompt('iframe', 'Вставьте ссылку на страницу:', 'http://www.bing.com/translator', 'Добавить', 'Отмена')">Добавить iframe</button>
 		</div>
